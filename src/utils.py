@@ -25,4 +25,4 @@ def gen_randomic_answers(number_of_answers):
             user_id=fake_user_id
         )
         answer.save()
-    print(f"Generate {number_of_answers} fake answers!")
+    print(f"Gerado {number_of_answers} respostas sintéticas!")
