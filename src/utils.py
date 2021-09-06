@@ -6,6 +6,7 @@ import pandas as pd
 
 from core.models import Answer
 
+random.seed(21)
 
 def gen_randomic_answers(number_of_answers):
     """ Gera "n" respostas sintéticas e armazena no banco de dados """
