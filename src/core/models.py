@@ -1,8 +1,7 @@
-from mongoengine import BooleanField, StringField
+from mongoengine import BooleanField, Document, StringField
 
 
-class Answer:
-    def __init__(Document):
+class Answer(Document):
         """ Armazena as respostas do usuário no banco de dados """
         _id = StringField(primary_key=True, required=True) #mongodb autoimplemnt this field
         answer_1 = BooleanField(required=True)
