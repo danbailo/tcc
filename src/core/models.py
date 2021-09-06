@@ -15,4 +15,5 @@ class Answer(Document):
         answer_9 = BooleanField(required=True)
         answer_10 = BooleanField(required=True)
         answer_11 = BooleanField(required=True)
+        evaded = BooleanField(required=True)
         user_id = StringField(unique=True, required=True)
