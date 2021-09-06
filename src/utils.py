@@ -1,5 +1,8 @@
+import json
 import random
 import uuid
+
+import pandas as pd
 
 from core.models import Answer
 
@@ -27,3 +30,13 @@ def gen_randomic_answers(number_of_answers):
         )
         answer.save()
     print(f"Gerado {number_of_answers} respostas sintéticas!")
+
+def mongo_to_df():
+    """ Pega os dados da coleção de respostas do banco de dados e converte num dataframe """
+    temp_data = []
+    for answer in Answer.objects:
+        # Pega cada documento da coleção e converte esse em json, depois cada json
+        # é convertido num dicionário e é criado uma lista de dicionarios para
+        # a criação de um dataframe
+        temp_data.append(json.loads(answer.to_json()))
+    return pd.DataFrame(temp_data)
