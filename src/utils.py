@@ -3,6 +3,7 @@ import random
 import uuid
 
 import pandas as pd
+from sklearn.metrics import classification_report
 
 from core.models import Answer
 
@@ -41,3 +42,6 @@ def mongo_to_df():
         # a criação de um dataframe
         temp_data.append(json.loads(answer.to_json()))
     return pd.DataFrame(temp_data)
+
+def classification_report_as_df(y_test, y_pred):
+    return pd.DataFrame(classification_report(y_test, y_pred, output_dict=True)).T    
