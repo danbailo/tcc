@@ -2,8 +2,8 @@ import argparse
 
 from mongoengine import connect, disconnect_all
 
-from core.models import Answer
-from utils import gen_randomic_answers
+from .core.models import Answer
+from .utils import gen_randomic_answers
 
 if __name__ == "__main__":
 
