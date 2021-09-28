@@ -1,21 +1,17 @@
 import json
 import random
-import uuid
 
 import pandas as pd
 from sklearn.metrics import classification_report
 
-from core.models import Answer
+from .core.models import Answer
 
-random.seed(21)
+random.seed(42)
 
 def gen_randomic_answers(number_of_answers):
     """ Gera "n" respostas sintéticas e armazena no banco de dados """
     for _ in range(number_of_answers):
-        fake_answer_id = "FAKE_answer-"+uuid.uuid4().hex
-        fake_user_id = "FAKE_user-"+uuid.uuid4().hex
         answer = Answer(
-            _id = fake_answer_id,
             answer_1 = random.choice([True, False]),
             answer_2 = random.choice([True, False]),
             answer_3 = random.choice([True, False]),
@@ -28,7 +24,6 @@ def gen_randomic_answers(number_of_answers):
             answer_10 = random.choice([True, False]),
             answer_11 = random.choice([True, False]),
             evaded = random.choice([True, False]),
-            user_id = fake_user_id
         )
         answer.save()
     print(f"Gerado {number_of_answers} respostas sintéticas!")
@@ -45,3 +40,15 @@ def mongo_to_df():
 
 def classification_report_as_df(y_test, y_pred):
     return pd.DataFrame(classification_report(y_test, y_pred, output_dict=True)).T    
+
+def data_augmentation(df, len_of_answers):
+    evaded = df['evaded'].copy()
+    df = df[df.columns.drop('evaded')]
+    temp = []
+    for i in range(len_of_answers+1, (len_of_answers*2)+1):
+        for _ in range(len(df)):
+            temp.append(random.choice([True, False]))
+        df['answer_'+str(i)] = temp.copy()
+        temp.clear()
+    df['evaded'] = evaded
+    return df
