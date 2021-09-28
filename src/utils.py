@@ -52,3 +52,8 @@ def data_augmentation(df, len_of_answers):
         temp.clear()
     df['evaded'] = evaded
     return df
+
+def expand_rows(df, size=1):
+    for i in range(len(df), len(df)+(len(df)*size)):
+        df.loc[i] = [random.choice([True, False]) for _ in range(len(df.columns))]
+    return df
