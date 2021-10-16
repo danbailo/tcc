@@ -4,20 +4,23 @@
         "Decision Tree": 0.75,
         "Random Forest": 0.7,
         "SVM": 0.6,
-        "Lenght from dataset": 100
+        "Lenght from dataset": 100,
+        "columns": 12
     },
     "second_models": {
         "Logistic regression": 0.6,
         "Decision Tree": 0.8,
         "Random Forest": 0.9,
         "SVM": 0.6,
-        "Lenght from dataset": 100
+        "Lenght from dataset": 100,
+        "columns": 24
     },
     "third_models": {
         "Logistic regression": 0.6,
         "Decision Tree": 0.85,
         "Random Forest": 0.75,
         "SVM": 0.6,
-        "Lenght from dataset": 1000
+        "Lenght from dataset": 1000,
+        "columns": 24
     }
 }

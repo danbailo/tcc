@@ -52,7 +52,8 @@ if __name__ == '__main__':
         'Decision Tree': best_dt[0],
         'Random Forest': best_rf[0],
         'SVM': best_svm[0],
-        'Lenght from dataset': len(df)
+        'Lenght from dataset': len(df),
+        'columns': len(df.columns)
     }
 
     lr_classifier = best_lr[1]
@@ -82,7 +83,7 @@ if __name__ == '__main__':
     plt.grid()
     plt.savefig('img/first_models.pdf')
 
-    df = data_augmentation(df, len_of_answers=len(df.columns[:-1]))
+    df = data_augmentation(df, len_of_answers=len(df.columns[:]))
     classifier.prepare_data()
 
     acc_lr = 0
@@ -115,7 +116,8 @@ if __name__ == '__main__':
         'Decision Tree': best_dt[0],
         'Random Forest': best_rf[0],
         'SVM': best_svm[0],
-        'Lenght from dataset': len(df)
+        'Lenght from dataset': len(df),
+        'columns': len(df.columns)
     }
 
     lr_classifier = best_lr[1]
@@ -177,7 +179,8 @@ if __name__ == '__main__':
         'Decision Tree': best_dt[0],
         'Random Forest': best_rf[0],
         'SVM': best_svm[0],
-        'Lenght from dataset': len(df)
+        'Lenght from dataset': len(df),
+        'columns': len(df.columns)
     }
 
     lr_classifier = best_lr[1]
