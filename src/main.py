@@ -36,12 +36,12 @@ if __name__ == '__main__':
         if decision_tree[0] > acc_dt:
             acc_dt = decision_tree[0]
             best_dt = decision_tree
-        
+
         random_forest = classifier._random_forest()
         if random_forest[0] > acc_rf:
             acc_rf = random_forest[0]
             best_rf = random_forest
-        
+
         svm = classifier._svm()
         if svm[0] > acc_svm:
             acc_svm = svm[0]
@@ -60,10 +60,18 @@ if __name__ == '__main__':
     rf_classifier = best_rf[1]
     svm_classifier = best_svm[1]
 
-    lr_roc = RocCurveDisplay.from_estimator(lr_classifier, classifier.X_test, classifier.y_test)
-    dt_roc = RocCurveDisplay.from_estimator(dt_classifier, classifier.X_test, classifier.y_test)
-    rf_roc = RocCurveDisplay.from_estimator(rf_classifier, classifier.X_test, classifier.y_test)
-    svm_roc = RocCurveDisplay.from_estimator(svm_classifier, classifier.X_test, classifier.y_test)
+    lr_roc = RocCurveDisplay.from_estimator(
+            lr_classifier, classifier.X_test, classifier.y_test
+        )
+    dt_roc = RocCurveDisplay.from_estimator(
+            dt_classifier, classifier.X_test, classifier.y_test
+        )
+    rf_roc = RocCurveDisplay.from_estimator(
+            rf_classifier, classifier.X_test, classifier.y_test
+        )
+    svm_roc = RocCurveDisplay.from_estimator(
+            svm_classifier, classifier.X_test, classifier.y_test
+        )
     plt.close("all")
 
     ax = plt.gca()
@@ -91,12 +99,12 @@ if __name__ == '__main__':
         if decision_tree[0] > acc_dt:
             acc_dt = decision_tree[0]
             best_dt = decision_tree
-        
+
         random_forest = classifier._random_forest()
         if random_forest[0] > acc_rf:
             acc_rf = random_forest[0]
             best_rf = random_forest
-        
+
         svm = classifier._svm()
         if svm[0] > acc_svm:
             acc_svm = svm[0]
@@ -115,12 +123,20 @@ if __name__ == '__main__':
     rf_classifier = best_rf[1]
     svm_classifier = best_svm[1]
 
-    lr_roc = RocCurveDisplay.from_estimator(lr_classifier, classifier.X_test, classifier.y_test)
-    dt_roc = RocCurveDisplay.from_estimator(dt_classifier, classifier.X_test, classifier.y_test)
-    rf_roc = RocCurveDisplay.from_estimator(rf_classifier, classifier.X_test, classifier.y_test)
-    svm_roc = RocCurveDisplay.from_estimator(svm_classifier, classifier.X_test, classifier.y_test)
+    lr_roc = RocCurveDisplay.from_estimator(
+            lr_classifier, classifier.X_test, classifier.y_test
+        )
+    dt_roc = RocCurveDisplay.from_estimator(
+            dt_classifier, classifier.X_test, classifier.y_test
+        )
+    rf_roc = RocCurveDisplay.from_estimator(
+            rf_classifier, classifier.X_test, classifier.y_test
+        )
+    svm_roc = RocCurveDisplay.from_estimator(
+            svm_classifier, classifier.X_test, classifier.y_test
+        )
     plt.close("all")
-    
+
     ax = plt.gca()
     lr_roc.plot(ax=ax, alpha=0.8)
     dt_roc.plot(ax=ax, alpha=0.8)
@@ -145,12 +161,12 @@ if __name__ == '__main__':
         if decision_tree[0] > acc_dt:
             acc_dt = decision_tree[0]
             best_dt = decision_tree
-        
+
         random_forest = classifier._random_forest()
         if random_forest[0] > acc_rf:
             acc_rf = random_forest[0]
             best_rf = random_forest
-        
+
         svm = classifier._svm()
         if svm[0] > acc_svm:
             acc_svm = svm[0]
@@ -169,12 +185,20 @@ if __name__ == '__main__':
     rf_classifier = best_rf[1]
     svm_classifier = best_svm[1]
 
-    lr_roc = RocCurveDisplay.from_estimator(lr_classifier, classifier.X_test, classifier.y_test)
-    dt_roc = RocCurveDisplay.from_estimator(dt_classifier, classifier.X_test, classifier.y_test)
-    rf_roc = RocCurveDisplay.from_estimator(rf_classifier, classifier.X_test, classifier.y_test)
-    svm_roc = RocCurveDisplay.from_estimator(svm_classifier, classifier.X_test, classifier.y_test)
+    lr_roc = RocCurveDisplay.from_estimator(
+            lr_classifier, classifier.X_test, classifier.y_test
+        )
+    dt_roc = RocCurveDisplay.from_estimator(
+            dt_classifier, classifier.X_test, classifier.y_test
+        )
+    rf_roc = RocCurveDisplay.from_estimator(
+            rf_classifier, classifier.X_test, classifier.y_test
+        )
+    svm_roc = RocCurveDisplay.from_estimator(
+            svm_classifier, classifier.X_test, classifier.y_test
+        )
     plt.close("all")
-    
+
     ax = plt.gca()
     lr_roc.plot(ax=ax, alpha=0.8)
     dt_roc.plot(ax=ax, alpha=0.8)
