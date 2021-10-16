@@ -82,6 +82,7 @@ if __name__ == '__main__':
     svm_roc.plot(ax=ax, alpha=0.8)
     plt.grid()
     plt.savefig('img/first_models.pdf')
+    del logistic_regression, decision_tree, random_forest, svm
 
     df = data_augmentation(df, len_of_answers=len(df.columns[:]))
     classifier.prepare_data()
@@ -146,6 +147,7 @@ if __name__ == '__main__':
     svm_roc.plot(ax=ax, alpha=0.8)
     plt.grid()
     plt.savefig('img/second_models.pdf')
+    del logistic_regression, decision_tree, random_forest, svm
 
     df = expand_rows(df, 9)
 
@@ -209,6 +211,7 @@ if __name__ == '__main__':
     svm_roc.plot(ax=ax, alpha=0.8)
     plt.grid()
     plt.savefig('img/third_models.pdf')
+    del logistic_regression, decision_tree, random_forest, svm
 
     with open('output/result.json', 'w') as file:
         json.dump(result, file, ensure_ascii=False, indent=4)
