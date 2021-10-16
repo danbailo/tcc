@@ -20,10 +20,10 @@ class Classifier:
     avaliados por cada modelo.
 
     Args:
-        df (pd.Dataframe): dataframe contendo os dados que
+        df (pd.DataFrame): dataframe contendo os dados que
         serão manipulados pela classe.
     """
-    def __init__(self, df: pd.Dataframe) -> None:
+    def __init__(self, df: pd.DataFrame) -> None:
         self.df = df
         if "_id" in self.df:
             del df["_id"]
