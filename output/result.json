@@ -1,26 +1,190 @@
 {
     "first_models": {
-        "Logistic regression": 0.6,
-        "Decision Tree": 0.75,
-        "Random Forest": 0.7,
-        "SVM": 0.6,
-        "Lenght from dataset": 100,
+        "Logistic regression": [
+            {
+                "False": {
+                    "precision": 0.5641025641025641,
+                    "recall": 0.6875,
+                    "f1-score": 0.619718309859155,
+                    "support": 32
+                },
+                "True": {
+                    "precision": 0.5238095238095238,
+                    "recall": 0.39285714285714285,
+                    "f1-score": 0.4489795918367347,
+                    "support": 28
+                },
+                "accuracy": 0.55,
+                "macro avg": {
+                    "precision": 0.543956043956044,
+                    "recall": 0.5401785714285714,
+                    "f1-score": 0.5343489508479449,
+                    "support": 60
+                },
+                "weighted avg": {
+                    "precision": 0.5452991452991452,
+                    "recall": 0.55,
+                    "f1-score": 0.5400402414486921,
+                    "support": 60
+                }
+            },
+            {
+                "C": 1.0,
+                "class_weight": null,
+                "dual": false,
+                "fit_intercept": true,
+                "intercept_scaling": 1,
+                "l1_ratio": null,
+                "max_iter": 100,
+                "multi_class": "auto",
+                "n_jobs": null,
+                "penalty": "l2",
+                "random_state": null,
+                "solver": "lbfgs",
+                "tol": 0.0001,
+                "verbose": 0,
+                "warm_start": false
+            }
+        ],
+        "Decision Tree": [
+            {
+                "False": {
+                    "precision": 0.8484848484848485,
+                    "recall": 0.875,
+                    "f1-score": 0.8615384615384615,
+                    "support": 32
+                },
+                "True": {
+                    "precision": 0.8518518518518519,
+                    "recall": 0.8214285714285714,
+                    "f1-score": 0.8363636363636364,
+                    "support": 28
+                },
+                "accuracy": 0.85,
+                "macro avg": {
+                    "precision": 0.8501683501683501,
+                    "recall": 0.8482142857142857,
+                    "f1-score": 0.848951048951049,
+                    "support": 60
+                },
+                "weighted avg": {
+                    "precision": 0.8500561167227834,
+                    "recall": 0.85,
+                    "f1-score": 0.8497902097902099,
+                    "support": 60
+                }
+            },
+            {
+                "ccp_alpha": 0.0,
+                "class_weight": null,
+                "criterion": "gini",
+                "max_depth": null,
+                "max_features": null,
+                "max_leaf_nodes": null,
+                "min_impurity_decrease": 0.0,
+                "min_samples_leaf": 1,
+                "min_samples_split": 2,
+                "min_weight_fraction_leaf": 0.0,
+                "random_state": null,
+                "splitter": "best"
+            }
+        ],
+        "Random Forest": [
+            {
+                "False": {
+                    "precision": 0.9090909090909091,
+                    "recall": 0.9375,
+                    "f1-score": 0.923076923076923,
+                    "support": 32
+                },
+                "True": {
+                    "precision": 0.9259259259259259,
+                    "recall": 0.8928571428571429,
+                    "f1-score": 0.9090909090909091,
+                    "support": 28
+                },
+                "accuracy": 0.9166666666666666,
+                "macro avg": {
+                    "precision": 0.9175084175084175,
+                    "recall": 0.9151785714285714,
+                    "f1-score": 0.916083916083916,
+                    "support": 60
+                },
+                "weighted avg": {
+                    "precision": 0.9169472502805837,
+                    "recall": 0.9166666666666666,
+                    "f1-score": 0.9165501165501164,
+                    "support": 60
+                }
+            },
+            {
+                "bootstrap": true,
+                "ccp_alpha": 0.0,
+                "class_weight": null,
+                "criterion": "gini",
+                "max_depth": null,
+                "max_features": "auto",
+                "max_leaf_nodes": null,
+                "max_samples": null,
+                "min_impurity_decrease": 0.0,
+                "min_samples_leaf": 1,
+                "min_samples_split": 2,
+                "min_weight_fraction_leaf": 0.0,
+                "n_estimators": 10,
+                "n_jobs": null,
+                "oob_score": false,
+                "random_state": null,
+                "verbose": 0,
+                "warm_start": false
+            }
+        ],
+        "SVM": [
+            {
+                "False": {
+                    "precision": 0.7741935483870968,
+                    "recall": 0.75,
+                    "f1-score": 0.7619047619047619,
+                    "support": 32
+                },
+                "True": {
+                    "precision": 0.7241379310344828,
+                    "recall": 0.75,
+                    "f1-score": 0.736842105263158,
+                    "support": 28
+                },
+                "accuracy": 0.75,
+                "macro avg": {
+                    "precision": 0.7491657397107898,
+                    "recall": 0.75,
+                    "f1-score": 0.7493734335839599,
+                    "support": 60
+                },
+                "weighted avg": {
+                    "precision": 0.7508342602892102,
+                    "recall": 0.75,
+                    "f1-score": 0.7502088554720134,
+                    "support": 60
+                }
+            },
+            {
+                "C": 1.0,
+                "break_ties": false,
+                "cache_size": 200,
+                "class_weight": null,
+                "coef0": 0.0,
+                "decision_function_shape": "ovr",
+                "degree": 3,
+                "gamma": "scale",
+                "kernel": "rbf",
+                "max_iter": -1,
+                "probability": false,
+                "random_state": null,
+                "shrinking": true,
+                "tol": 0.001,
+                "verbose": false
+            }
+        ],
+        "Lenght from dataset": 200,
         "columns": 12
-    },
-    "second_models": {
-        "Logistic regression": 0.6,
-        "Decision Tree": 0.8,
-        "Random Forest": 0.9,
-        "SVM": 0.6,
-        "Lenght from dataset": 100,
-        "columns": 24
-    },
-    "third_models": {
-        "Logistic regression": 0.6,
-        "Decision Tree": 0.85,
-        "Random Forest": 0.75,
-        "SVM": 0.6,
-        "Lenght from dataset": 1000,
-        "columns": 24
     }
 }

@@ -6,7 +6,7 @@ import numpy as np
 import sklearn.model_selection as ms
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, classification_report
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
@@ -37,9 +37,9 @@ class Classifier:
         self.X_train, self.X_test, self.y_train, self.y_test = \
             ms.train_test_split(
                 X, y,
-                test_size=0.2,
+                test_size=0.3,
                 shuffle=True,
-                random_state=0
+                random_state=None
             )
 
     def _logistic_regression(self) -> Tuple[float, LogisticRegression]:
@@ -49,10 +49,11 @@ class Classifier:
             Tuple[float, LogisticRegression]: tupla contendo a acurácia
             do modelo e o modelo em si.
         """
-        classifier = LogisticRegression(n_jobs=-1)
+        classifier = LogisticRegression()
         classifier.fit(self.X_train, self.y_train)
         y_pred = classifier.predict(self.X_test)
-        return accuracy_score(self.y_test, y_pred), classifier
+        return (classification_report(self.y_test, y_pred, output_dict=True),
+                classifier)
 
     def _decision_tree(self) -> Tuple[float, DecisionTreeClassifier]:
         """Realiza o treinamento de um modelo de árvore de decisão.
@@ -64,7 +65,8 @@ class Classifier:
         classifier = DecisionTreeClassifier()
         classifier.fit(self.X_train, self.y_train)
         y_pred = classifier.predict(self.X_test)
-        return accuracy_score(self.y_test, y_pred), classifier
+        return (classification_report(self.y_test, y_pred, output_dict=True),
+                classifier)
 
     def _random_forest(self) -> Tuple[float, RandomForestClassifier]:
         """Realiza o treinamento de um modelo de floresta aleatória.
@@ -74,10 +76,11 @@ class Classifier:
             do modelo e o modelo em si.
         """
         estimators = 10
-        classifier = RandomForestClassifier(n_estimators=estimators, n_jobs=-1)
+        classifier = RandomForestClassifier(n_estimators=estimators)
         classifier = classifier.fit(self.X_train, self.y_train)
         y_pred = classifier.predict(self.X_test)
-        return accuracy_score(self.y_test, y_pred), classifier
+        return (classification_report(self.y_test, y_pred, output_dict=True),
+                classifier)
 
     def _svm(self) -> Tuple[float, SVC]:
         """Realiza o treinamento de um modelo de máquina de vetores de suporte.
@@ -86,7 +89,8 @@ class Classifier:
             Tuple[float, SVC]: tupla contendo a acurácia
             do modelo e o modelo em si.
         """
-        classifier = SVC(random_state=42)
+        classifier = SVC()
         classifier = classifier.fit(self.X_train, self.y_train)
         y_pred = classifier.predict(self.X_test)
-        return accuracy_score(self.y_test, y_pred), classifier
+        return (classification_report(self.y_test, y_pred, output_dict=True),
+                classifier)
