@@ -10,8 +10,8 @@ from sklearn.metrics import accuracy_score, classification_report
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
-np.random.seed(21)
-random.seed(21)
+np.random.seed(42)
+random.seed(42)
 
 
 class Classifier:
